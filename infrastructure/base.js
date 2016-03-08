@@ -1,9 +1,4 @@
-var heroin = require('heroin-js');
-
-var configurator = heroin(process.env.HEROKU_API_TOKEN, {debug: false});
-
-configurator({
-	name: 'oslo-test',
+var base = {
 	region: 'eu',
 	maintenance: false,
 	stack: 'cedar-14',
@@ -24,5 +19,7 @@ configurator({
 	},
 	formation: [ { process: 'web', quantity: 1, size: 'Free' } ],
 	log_drains: [],
-	domains: [ 'oslo-test.herokuapp.com' ] }
-);
+	// domains: [ 'oslo-test.herokuapp.com' ] 
+}
+
+module.exports = base;
