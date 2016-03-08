@@ -4,8 +4,7 @@ module.exports = {
         next();
     },
     clientError: function (req, res, next) {
-        var err = new Error('Not Found');
-        err.status = 404;
+        res.status(err.status || 404);
         next(err);
     },
     serverError: function (err, req, res, next) {
