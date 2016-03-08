@@ -4,8 +4,9 @@ module.exports = {
         next();
     },
     clientError: function (req, res, next) {
-        res.status(err.status || 404);
-        next(err);
+        // res.status(err.status || 404);
+        // err.status = 404;
+        // next(err);
     },
     serverError: function (err, req, res, next) {
         res.status(err.status || 500);
